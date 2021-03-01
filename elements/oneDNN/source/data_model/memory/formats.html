@@ -32,7 +32,7 @@ SPDX-License-Identifier: MIT
 
     
     <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../../../../_static/sphinx-book-theme.37f24b989f4638ff9c27c22dc7559d4f.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../../_static/sphinx-book-theme.c441f2ba0852f4cabcb80105e3a46ae6.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/sphinxmark.css" />
@@ -4643,7 +4643,7 @@ need to agree with <span class="math notranslate nohighlight">\(\operatorname{di
 \operatorname{strides}[j]\)</span> if <span class="math notranslate nohighlight">\(\sigma(i) &lt; \sigma(j)\)</span> for all
 <span class="math notranslate nohighlight">\(0 \leq i, j &lt; n\)</span>. Then the following must hold:</p>
 <div class="math notranslate nohighlight">
-\[\operatorname{stides}[i] \geq
+\[\operatorname{strides}[i] \geq
 \operatorname{strides}[j] * \operatorname{dimensions}[j]
 \text{ if } \sigma(i) &lt; \sigma(j) \text{ for all } 0 \leq i, j &lt; n.\]</div>
 <p>For an element with coordinates <span class="math notranslate nohighlight">\((i_0, \ldots, i_{n-1})\)</span> such that
@@ -4696,7 +4696,7 @@ This permutation is used to compute strides for tensors with up to 6 dimensions.
 The resulting strides specify dense storage, in other words, using the
 nomenclature from the previous section, the following equality holds:</p>
 <div class="math notranslate nohighlight">
-\[\operatorname{stides}[i] =
+\[\operatorname{strides}[i] =
 \operatorname{strides}[j] * \operatorname{dimensions}[j]
 \text{ if } \sigma(i) + 1 = \sigma(j) \text{ for all } 0 \leq i, j &lt; n - 1.\]</div>
 <p>In the matrix example, we could have used <a class="reference internal" href="#_CPPv4N4dnnl6memory10format_tag2abE" title="dnnl::memory::format_tag::ab"><code class="xref cpp cpp-any docutils literal notranslate"><span class="pre">dnnl::memory::format_tag::ab</span></code></a> for the
