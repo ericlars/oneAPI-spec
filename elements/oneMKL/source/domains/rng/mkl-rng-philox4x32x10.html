@@ -4574,7 +4574,8 @@ SPDX-License-Identifier: MIT
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
         <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i> Contents
+            <i class="fas fa-list"></i>
+            Contents
         </div>
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
@@ -4609,9 +4610,9 @@ SPDX-License-Identifier: MIT
 <dt><span class="math notranslate nohighlight">\(\omega_n = f(c_n)\)</span>, where <span class="math notranslate nohighlight">\(f\)</span> is a function that takes 128-bit argument and returns a 128-bit number. The returned number is obtained as follows:</dt><dd><p>2.1. The argument <span class="math notranslate nohighlight">\(c\)</span> is interpreted as four 32-bit numbers <span class="math notranslate nohighlight">\(c = \overline{L_1 R_1 L_0 R_0}\)</span>, where <span class="math notranslate nohighlight">\(\overline{A B C D} = A \cdot  2^{96} + B \cdot  2^{64} + C \cdot  2^{32} + D\)</span>, put <span class="math notranslate nohighlight">\(k_0^0 =k_0, k_1^0=k_1\)</span>.</p>
 <p>2.2. The following recurrence is calculated:</p>
 <p><span class="math notranslate nohighlight">\(L_1^{i+1} =mullo(R_1^i, 0xD2511F53)\)</span></p>
-<p><span class="math notranslate nohighlight">\(R_1^{i+1} =mulhi(R_0^i, 0xCD9E8D57) \oplus k_0 \oplus L_0\)</span></p>
+<p><span class="math notranslate nohighlight">\(R_1^{i+1} =mulhi(R_0^i, 0xCD9E8D57) \oplus k_0^i \oplus L_0^i\)</span></p>
 <p><span class="math notranslate nohighlight">\(L_0^{i+1} =mullo(R_0^i, 0xCD9E8D57)\)</span></p>
-<p><span class="math notranslate nohighlight">\(R_0^{i+1} =mulhi(R_1^i, 0xD2511F53) \oplus k_1 \oplus L_1\)</span></p>
+<p><span class="math notranslate nohighlight">\(R_0^{i+1} =mulhi(R_1^i, 0xD2511F53) \oplus k_1^i \oplus L_1^i\)</span></p>
 <p><span class="math notranslate nohighlight">\(k_0^{i+1} =k_0^i + 0xBB67AE85\)</span></p>
 <p><span class="math notranslate nohighlight">\(k_1^{i+1} =k_1^i + 0x9E3779B9\)</span>, where <span class="math notranslate nohighlight">\(mulhi(a, b)\)</span> and <span class="math notranslate nohighlight">\(mullo(a, b)\)</span> are high and low parts of the <span class="math notranslate nohighlight">\(a \cdot b\)</span> product respectively.</p>
 <p>2.3. Put <span class="math notranslate nohighlight">\(f(c) = \overline{L_1^N R_1^N L_0^N R_0^N}\)</span>, where <span class="math notranslate nohighlight">\(N = 10\)</span></p>

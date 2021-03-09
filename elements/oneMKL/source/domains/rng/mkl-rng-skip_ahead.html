@@ -4574,7 +4574,8 @@ SPDX-License-Identifier: MIT
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
         <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i> Contents
+            <i class="fas fa-list"></i>
+            Contents
         </div>
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
@@ -4607,14 +4608,14 @@ SPDX-License-Identifier: MIT
 <p>oneapi::mkl::rng::skip_ahead function changes the current state of the engine so that with the further call of the generator the output subsequence begins with the specified offset see <a class="reference external" href="#rng_block_splitting">Figure “Block-Splitting Method”</a>.</p>
 <div class="figtop docutils container" id="rng-block-splitting">
 <p>Block-Splitting Method</p>
-<p><img alt="image0" src="../../../../../_images/GUID-061AF9F8-B166-4154-9BF1-4E2C99F1CE1F-low.png" /></p>
+<p><img alt="image0" src="../../../../../_images/rng-skip-ahead.png" /></p>
 </div>
 <div class="section" id="onemkl-rng-skip-ahead-common">
 <span id="id1"></span><h2>skip_ahead<a class="headerlink" href="#onemkl-rng-skip-ahead-common" title="Permalink to this headline">¶</a></h2>
 <p class="rubric">Syntax</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">namespace</span> <span class="n">oneapi</span><span class="o">::</span><span class="n">mkl</span><span class="o">::</span><span class="n">rng</span> <span class="p">{</span>
-<span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">EngineType</span><span class="o">&gt;</span> \
-               <span class="kt">void</span> <span class="n">oneapi</span><span class="o">::</span><span class="n">mkl</span><span class="o">::</span><span class="n">rng</span><span class="o">::</span><span class="n">skip_ahead</span><span class="p">(</span><span class="n">EngineType</span><span class="o">&amp;</span> <span class="n">engine</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="kt">uint64_t</span> <span class="n">num_to_skip</span><span class="p">);</span>
+<span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">EngineType</span><span class="o">&gt;</span>
+<span class="kt">void</span> <span class="n">oneapi</span><span class="o">::</span><span class="n">mkl</span><span class="o">::</span><span class="n">rng</span><span class="o">::</span><span class="n">skip_ahead</span><span class="p">(</span><span class="n">EngineType</span><span class="o">&amp;</span> <span class="n">engine</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="kt">uint64_t</span> <span class="n">num_to_skip</span><span class="p">);</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -4637,8 +4638,8 @@ SPDX-License-Identifier: MIT
 <p class="rubric">Example</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// Creating 3 identical engines</span>
 <span class="n">oneapi</span><span class="o">::</span><span class="n">mkl</span><span class="o">::</span><span class="n">rng</span><span class="o">::</span><span class="n">mcg31m1</span> <span class="n">engine_1</span><span class="p">(</span><span class="n">queue</span><span class="p">,</span> <span class="n">seed</span><span class="p">);</span>
-<span class="n">oneapi</span><span class="o">::</span><span class="n">mkl</span><span class="o">::</span><span class="n">rng</span><span class="o">::</span><span class="n">mcg31m1</span> <span class="n">engine_2</span><span class="p">(</span><span class="n">queue</span><span class="p">,</span> <span class="n">engine_1</span><span class="p">);</span>
-<span class="n">oneapi</span><span class="o">::</span><span class="n">mkl</span><span class="o">::</span><span class="n">rng</span><span class="o">::</span><span class="n">mcg31m1</span> <span class="n">engine_3</span><span class="p">(</span><span class="n">queue</span><span class="p">,</span> <span class="n">engine_2</span><span class="p">);</span>
+<span class="n">oneapi</span><span class="o">::</span><span class="n">mkl</span><span class="o">::</span><span class="n">rng</span><span class="o">::</span><span class="n">mcg31m1</span> <span class="n">engine_2</span><span class="p">(</span><span class="n">engine_1</span><span class="p">);</span>
+<span class="n">oneapi</span><span class="o">::</span><span class="n">mkl</span><span class="o">::</span><span class="n">rng</span><span class="o">::</span><span class="n">mcg31m1</span> <span class="n">engine_3</span><span class="p">(</span><span class="n">engine_2</span><span class="p">);</span>
 
 <span class="c1">// Skipping ahead by 7 elements the 2nd engine</span>
 <span class="n">oneapi</span><span class="o">::</span><span class="n">mkl</span><span class="o">::</span><span class="n">rng</span><span class="o">::</span><span class="n">skip_ahead</span><span class="p">(</span><span class="n">engine_2</span><span class="p">,</span> <span class="mi">7</span><span class="p">);</span>
@@ -4652,8 +4653,8 @@ SPDX-License-Identifier: MIT
 <span id="onemkl-rng-skip-ahead-ex"></span><h2>skip_ahead (Interface with a partitioned number of skipped elements)<a class="headerlink" href="#skip-ahead-interface-with-a-partitioned-number-of-skipped-elements" title="Permalink to this headline">¶</a></h2>
 <p class="rubric">Syntax</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">namespace</span> <span class="n">oneapi</span><span class="o">::</span><span class="n">mkl</span><span class="o">::</span><span class="n">rng</span> <span class="p">{</span>
-<span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">EngineType</span><span class="o">&gt;</span> \
-               <span class="kt">void</span> <span class="n">oneapi</span><span class="o">::</span><span class="n">mkl</span><span class="o">::</span><span class="n">rng</span><span class="o">::</span><span class="n">skip_ahead</span><span class="p">(</span><span class="n">EngineType</span><span class="o">&amp;</span> <span class="n">engine</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">initializer_list</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="kt">uint64_t</span><span class="o">&gt;</span> <span class="n">num_to_skip</span><span class="p">);</span>
+<span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">EngineType</span><span class="o">&gt;</span>
+<span class="kt">void</span> <span class="n">oneapi</span><span class="o">::</span><span class="n">mkl</span><span class="o">::</span><span class="n">rng</span><span class="o">::</span><span class="n">skip_ahead</span><span class="p">(</span><span class="n">EngineType</span><span class="o">&amp;</span> <span class="n">engine</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">initializer_list</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="kt">uint64_t</span><span class="o">&gt;</span> <span class="n">num_to_skip</span><span class="p">);</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -4682,7 +4683,7 @@ SPDX-License-Identifier: MIT
 <span class="n">std</span><span class="o">::</span><span class="n">initializer_list</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="kt">uint64_t</span><span class="o">&gt;</span> <span class="n">num_to_skip</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">};</span>
 
 <span class="c1">// Creating the 2nd engine based on 1st. Skipping by 2^64</span>
-<span class="n">oneapi</span><span class="o">::</span><span class="n">mkl</span><span class="o">::</span><span class="n">rng</span><span class="o">::</span><span class="n">mrg32k3a</span> <span class="n">engine_2</span><span class="p">(</span><span class="n">queue</span><span class="p">,</span> <span class="n">engine_1</span><span class="p">);</span>
+<span class="n">oneapi</span><span class="o">::</span><span class="n">mkl</span><span class="o">::</span><span class="n">rng</span><span class="o">::</span><span class="n">mrg32k3a</span> <span class="n">engine_2</span><span class="p">(</span><span class="n">engine_1</span><span class="p">);</span>
 <span class="n">oneapi</span><span class="o">::</span><span class="n">mkl</span><span class="o">::</span><span class="n">rng</span><span class="o">::</span><span class="n">skip_ahead</span><span class="p">(</span><span class="n">engine_2</span><span class="p">,</span> <span class="n">num_to_skip</span><span class="p">);</span>
 </pre></div>
 </div>

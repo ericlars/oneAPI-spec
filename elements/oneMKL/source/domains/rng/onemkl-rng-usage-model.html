@@ -4573,7 +4573,8 @@ SPDX-License-Identifier: MIT
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
         <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i> Contents
+            <i class="fas fa-list"></i>
+            Contents
         </div>
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
@@ -4638,7 +4639,7 @@ normal distribution with the given parameters.</p>
 <span class="cp">#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp"></span>
 
 <span class="cp">#include</span> <span class="cpf">&quot;CL/sycl.hpp&quot;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&quot;mkl_rng_sycl.hpp&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;oneapi/mkl/rng.hpp&quot;</span><span class="cp"></span>
 
 <span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
     <span class="n">sycl</span><span class="o">::</span><span class="n">queue</span> <span class="n">queue</span><span class="p">;</span>
@@ -4673,7 +4674,7 @@ normal distribution with the given parameters.</p>
 <span class="cp">#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp"></span>
 
 <span class="cp">#include</span> <span class="cpf">&quot;CL/sycl.hpp&quot;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&quot;mkl_rng_sycl.hpp&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;oneapi/mkl/rng.hpp&quot;</span><span class="cp"></span>
 
 <span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
     <span class="n">sycl</span><span class="o">::</span><span class="n">queue</span> <span class="n">queue</span><span class="p">;</span>
@@ -4684,7 +4685,7 @@ normal distribution with the given parameters.</p>
     <span class="n">sycl</span><span class="o">::</span><span class="n">usm_allocator</span><span class="o">&lt;</span><span class="kt">double</span><span class="p">,</span> <span class="n">sycl</span><span class="o">::</span><span class="n">usm</span><span class="o">::</span><span class="n">alloc</span><span class="o">::</span><span class="n">shared</span><span class="o">&gt;</span> <span class="n">allocator</span><span class="p">(</span><span class="n">queue</span><span class="p">.</span><span class="n">get_context</span><span class="p">(),</span> <span class="n">queue</span><span class="p">.</span><span class="n">get_device</span><span class="p">());</span>
 
     <span class="c1">// create vector with USM allocator</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="p">,</span> <span class="n">sycl</span><span class="o">::</span><span class="n">usm_allocator</span><span class="o">&lt;</span><span class="kt">double</span><span class="p">,</span> <span class="n">sycl</span><span class="o">::</span><span class="n">usm</span><span class="o">::</span><span class="n">alloc</span><span class="o">::</span><span class="n">shared</span><span class="o">&gt;&gt;</span> <span class="n">r</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">allocator</span><span class="p">);</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="p">,</span> <span class="k">decltype</span><span class="p">(</span><span class="n">allocator</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">r</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">allocator</span><span class="p">);</span>
 
     <span class="n">oneapi</span><span class="o">::</span><span class="n">mkl</span><span class="o">::</span><span class="n">rng</span><span class="o">::</span><span class="n">philox4x32x10</span> <span class="n">engine</span><span class="p">(</span><span class="n">queue</span><span class="p">,</span> <span class="n">seed</span><span class="p">);</span> <span class="c1">// basic random number generator object</span>
     <span class="n">oneapi</span><span class="o">::</span><span class="n">mkl</span><span class="o">::</span><span class="n">rng</span><span class="o">::</span><span class="n">gaussian</span><span class="o">&lt;</span><span class="kt">double</span><span class="p">,</span> <span class="n">oneapi</span><span class="o">::</span><span class="n">mkl</span><span class="o">::</span><span class="n">rng</span><span class="o">::</span><span class="n">gaussian_method</span><span class="o">::</span><span class="n">box_muller2</span><span class="o">&gt;</span> <span class="n">distr</span><span class="p">(</span><span class="mf">5.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">);</span> <span class="c1">// distribution object</span>
