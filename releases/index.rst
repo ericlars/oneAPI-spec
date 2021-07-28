@@ -36,9 +36,12 @@ under development and is labeled *provisional* until it is approved.
   * - Version
     - Date
     - View
+  * - `1.1 provisional rev 2`_
+    - 2021-7-19
+    - `HTML <https://spec.oneapi.io/versions/1.1-provisional-rev-2/>`__ `PDF <https://spec.oneapi.io/versions/1.1-provisional-rev-2/oneAPI-spec.pdf>`__
   * - `1.1 provisional rev 1`_
     - 2021-4-7
-    - `HTML <https://spec.oneapi.com/versions/1.1-provisional-rev-1/>`__ `PDF <https://spec.oneapi.com/versions/1.1-provisional-rev-1/oneAPI-spec.pdf>`__
+    - `HTML <https://spec.oneapi.io/versions/1.1-provisional-rev-1/>`__ `PDF <https://spec.oneapi.io/versions/1.1-provisional-rev-1/oneAPI-spec.pdf>`__
 
 
 1.0
@@ -53,13 +56,20 @@ under development and is labeled *provisional* until it is approved.
     - View
   * - `1.0 rev 2`_
     - 2020-10-21
-    - `HTML <https://spec.oneapi.com/versions/1.0-rev-2/>`__ `PDF <https://spec.oneapi.com/versions/1.0-rev-2/oneAPI-spec.pdf>`__
+    - `HTML <https://spec.oneapi.io/versions/1.0-rev-2/>`__ `PDF <https://spec.oneapi.io/versions/1.0-rev-2/oneAPI-spec.pdf>`__
   * - `1.0 rev 1`_
     - 2020-9-14
-    - `HTML <https://spec.oneapi.com/versions/1.0-rev-1/>`__ `PDF <https://spec.oneapi.com/versions/1.0-rev-1/oneAPI-spec.pdf>`__
+    - `HTML <https://spec.oneapi.io/versions/1.0-rev-1/>`__ `PDF <https://spec.oneapi.io/versions/1.0-rev-1/oneAPI-spec.pdf>`__
 
 Release Notes
 -------------
+
+1.1 provisional rev 2
+~~~~~~~~~~~~~~~~~~~~~
+
+* oneVPL: Updated to 2.4.0
+* oneDAL: Updated some APIs
+* oneMKL: bug fixes
 
 1.1 provisional rev 1
 ~~~~~~~~~~~~~~~~~~~~~
@@ -91,7 +101,7 @@ Advanced Ray Tracing
     - View
   * - `oneART v0.5`_
     - 2021-2-18
-    - `HTML <https://spec.oneapi.com/oneart/0.5-rev-1/index.html>`__
+    - `HTML <https://spec.oneapi.io/oneart/0.5-rev-1/index.html>`__
 
 
 Release Notes
@@ -137,13 +147,23 @@ oneDNN Graph
     - View
   * - `oneDNN Graph v0.5`_
     - 2021-4-8
-    - `HTML <https://spec.oneapi.com/onednn-graph/latest/index.html>`__
+    - `HTML <https://spec.oneapi.io/onednn-graph/latest/index.html>`__
 
 Release Notes
 -------------
 
 oneDNN Graph v0.5
 ~~~~~~~~~~~~~~~~~
+
+Provides more optimization and improves the programming
+experience. The main changes are as follows:
+
+- Support in-place optimization to reduce memory footprint and provide
+  better data locality
+- Support using the partition vector directly for compilation and
+  execution without maintaining a computation graph
+- Provide a special End op to express the multiple uses of a logical
+  tensor, typically for indicating the output tensors of the graph
 
 oneVPL
 ======
@@ -157,10 +177,10 @@ oneVPL
     - View
   * - `oneVPL v2.4.0`_
     - 2021-5-12
-    - `HTML <https://spec.oneapi.com/onevpl/2.4.0/index.html>`__
+    - `HTML <https://spec.oneapi.io/onevpl/2.4.0/index.html>`__
   * - `oneVPL v2.3.1`_
     - 2021-4-8
-    - `HTML <https://spec.oneapi.com/onevpl/2.3.1/index.html>`__
+    - `HTML <https://spec.oneapi.io/onevpl/2.3.1/index.html>`__
 
 Release Notes
 -------------
